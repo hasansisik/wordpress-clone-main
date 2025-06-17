@@ -15,42 +15,42 @@ export default function Team() {
       seal: "Kalemin Sırrı",
       role: "İçerik yazımı, kitaplaştırma, ruhsal metin üretimi.",
       description: "Her cümle bir tanıklıksa, o cümleyi kayda geçiren odur. Söylenemeyeni yazıya çevirir.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158996/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_genc%CC%A7_insan_olsun_tu%CC%88rk_olsun_pozzfy.jpg"
     },
     {
       title: "Satış ve İletişim",
       seal: "Köprü ve Yankı",
       role: "Eğitimlerin tanıtımı, satış koordinasyonu, ilişki yönetimi.",
       description: "İnsanlara ulaşmanın en dürüst, en içten yollarını ararlar. İyi insanlara iyi niyetle dokunurlar.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158987/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_30_lu_yas%CC%A7larda_kad%C4%B1n_olsun_yqhjzc.jpg"
     },
     {
       title: "Sistem ve Dijital Operasyon",
       seal: "Zemin ve Rüzgar",
       role: "Web altyapısı, e-ticaret entegrasyonu, teknik destek.",
       description: "Görünmeyen işlerin omuzlarıdır. Her şeyin arkada düzgün çalışması için gece gündüz hazırdırlar.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158996/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_30_lu_yas%CC%A7larda_erkek_olsun_grwgvc.jpg"
     },
     {
       title: "Strateji ve Gelişim",
       seal: "Yön ve Kıvılcım",
       role: "Eğitimlerin planlaması, proje geliştirme, kalite kontrol.",
       description: "Biri yolu işaret eder, diğeri kıvılcımı taşır. Yeniliğin ve sadakatin dengesi burada kurulur.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158996/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_s%CC%A7ekilde_dis%CC%A7eleri_go%CC%88zu%CC%88kecek_s%CC%A7ekilde_gu%CC%88len_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_orta_yas%CC%A7_insan_olsun_tu%CC%88rk_olsun_uwpg0x.jpg"
     },
     {
       title: "Mistik Temsil",
       seal: "Sessiz Niyet",
       role: "Anlatı ve metafizik danışmanlık, yaratımın manevi pusulası.",
       description: "Fısıltıları duyar, kalpleri dinler, yazılmayanı işaret eder. Varlığıyla mühürlenmiş bir sessizliktir.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158995/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_25_lu_yas%CC%A7larda_sar%C4%B1s%CC%A7%C4%B1n_kad%C4%B1n_olsun_nzdubr.jpg"
     },
     {
       title: "Denetim ve Rehberlik",
       seal: "Adalet Taşıyıcısı",
       role: "Etik denetim, proje takibi, hakikatin hatırlatıcısı.",
       description: "Her adımı tartar, her sesi duyar, her aşamada dengeyi gözetir.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1749853518/ezj4efbduhmrbcgzm3cc.webp"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750159128/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_s%CC%A7ekilde_dis%CC%A7eleri_go%CC%88zu%CC%88kecek_s%CC%A7ekilde_gu%CC%88len_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_orta_yas%CC%A7_insan_olsun_qn6wir.jpg"
     }
   ];
 
@@ -113,11 +113,11 @@ export default function Team() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="col-lg-3 col-md-6 mb-lg-4 mb-7 text-center"
+                className="col-lg-3 col-md-6 mb-lg-4 mb-7"
                 data-aos="fade-zoom-in"
                 data-aos-delay={100 + (index % 4) * 100}
               >
-                <div className="position-relative d-inline-block z-1">
+                <div className="position-relative d-inline-block z-1 w-100 text-center">
                   <div className="zoom-img rounded-3">
                     <img
                       className="img-fluid w-100"
@@ -127,10 +127,10 @@ export default function Team() {
                     />
                   </div>
                 </div>
-                <div className="mt-4">
-                  <h5 className="fw-bold mb-2" style={{ color: "#111827" }}>
+                <div className="mt-4 text-start">
+                  <h6 className="fw-bold mb-2" style={{ color: "#111827" }}>
                      {member.title}
-                  </h5>
+                  </h6>
                   <p className="text-muted mb-1">
                     <strong>Mühürü:</strong> {member.seal}
                   </p>
@@ -148,7 +148,7 @@ export default function Team() {
           {/* Bottom Message */}
           <div className="row mt-6">
             <div className="col-12 text-center">
-              <div className="p-4 rounded-4" style={{ backgroundColor: "#f8f9fa" }}>
+              <div className="p-4 rounded-4" style={{ backgroundColor: "#fff" }}>
                 <h4 className="fw-bold mb-3" style={{ color: "#111827" }}>
                   NİLATED Bir Ekip Değil, Bir Ahit'tir.
                 </h4>

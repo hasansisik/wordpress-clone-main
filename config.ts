@@ -1,1 +1,1 @@
-export const server: string ="https://wordpress-server-three.vercel.app/v1";
+export const server: string ="https://nilated-server-e09f165546d9.herokuapp.com/v1";

@@ -134,25 +134,25 @@ export default function Footer1(props: FooterProps = {}) {
 												
 												return (
 													<div key={column._id || `column-${colIndex}`} className={colClass} data-aos="fade-zoom-in" data-aos-delay={200 + (colIndex * 100)}>
-														<h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">{column.title}</h3>
-														<div className="d-flex flex-column align-items-start">
-															{Array.isArray(column.links) && column.links.map((link: any, linkIndex: number) => (
-																<Link 
-																	key={link._id || `link-${colIndex}-${linkIndex}`} 
+													<h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">{column.title}</h3>
+													<div className="d-flex flex-column align-items-start">
+														{Array.isArray(column.links) && column.links.map((link: any, linkIndex: number) => (
+															<Link 
+																key={link._id || `link-${colIndex}-${linkIndex}`} 
 																	className="hover-effect text-white mb-2 fw-medium" 
-																	href={link.link || "#"}
+																href={link.link || "#"}
 																	style={{ 
 																		whiteSpace: 'nowrap',
 																		display: 'block',
 																		fontSize: '0.85rem',
 																		lineHeight: '1.4'
 																	}}
-																>
-																	{link.name}
-																</Link>
-															))}
-														</div>
+															>
+																{link.name}
+															</Link>
+														))}
 													</div>
+												</div>
 												);
 											})
 										) : (
