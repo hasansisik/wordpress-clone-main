@@ -135,13 +135,13 @@ export default function Contact1() {
 								
 								<div className="mb-4">
 									<h6 className="fw-bold mb-2">📍 Ofis Adresi:</h6>
-									<p className="text-muted mb-1">[NİLATED Ana Ofis]</p>
-									<p className="text-muted">(Adres bilgisi buraya girilecek)</p>
+									<p className="text-muted mb-1">NİLATED Ana Ofis</p>
+									<p className="text-muted">Meşrutiyet Mah. Meşrutiyet Cad. Servet Apt. No:5 Kat:4 Daire:7 Kızılay/ANKARA</p>
 								</div>
 
 								<div className="mb-4">
 									<h6 className="fw-bold mb-2">📞 Telefon:</h6>
-									<p className="text-muted">+90 XXX XXX XX XX</p>
+									<p className="text-muted">+90 541 716 81 17</p>
 								</div>
 
 								<div className="mb-4">
