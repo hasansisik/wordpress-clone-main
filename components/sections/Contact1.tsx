@@ -170,9 +170,9 @@ export default function Contact1() {
 								
 								<div className="mb-4">
 									<h6 className="fw-bold mb-2">🎯 Psikiyatrik Görüşmeler</h6>
-									<p className="mb-2">Dr. Cemil Çelik yalnızca 45 dakikalık ilaç + terapi görüşmeleri kabul etmektedir.</p>
+									<p className="mb-2">Dr. Cemil Çelik yalnızca 15 dakikalık ilaç + terapi görüşmeleri kabul etmektedir.</p>
 									<ul className="list-unstyled text-muted">
-										<li><strong>Süre:</strong> 45 dakika</li>
+										<li><strong>Süre:</strong> 15 dakika</li>
 										<li><strong>Ücret:</strong> 5500 TL</li>
 										<li><strong>Günlük maksimum:</strong> 6 kişi</li>
 									</ul>

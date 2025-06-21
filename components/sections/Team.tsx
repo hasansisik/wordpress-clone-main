@@ -15,7 +15,7 @@ export default function Team() {
       seal: "Kalemin Sırrı",
       role: "İçerik yazımı, kitaplaştırma, ruhsal metin üretimi.",
       description: "Her cümle bir tanıklıksa, o cümleyi kayda geçiren odur. Söylenemeyeni yazıya çevirir.",
-      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750158996/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_genc%CC%A7_insan_olsun_tu%CC%88rk_olsun_pozzfy.jpg"
+      image: "https://res.cloudinary.com/ddmwgv3av/image/upload/v1750538318/biraz_uzaktan_bak%C4%B1s%CC%A7_ac%CC%A7%C4%B1l%C4%B1_gerc%CC%A7ekc%CC%A7i_insan_laz%C4%B1m_kamera_c%CC%A7ok_yak%C4%B1n_olmas%C4%B1n_biyometrik_olsun_30_lu_yas%CC%A7larda_kad%C4%B1n_olsun_1_hlktl9.jpg"
     },
     {
       title: "Satış ve İletişim",
