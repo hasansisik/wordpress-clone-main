@@ -1,27 +1,25 @@
 import { Metadata } from "next"
+import { store } from "@/redux/store"
+import { getGeneral } from "@/redux/actions/generalActions"
+import { generateMetadata as generateSeoMetadata } from "@/lib/seo"
 
-// Static metadata generation
+// Dinamik metadata oluşturma
 export async function generateMetadata(): Promise<Metadata> {
-	return {
-		title: "Emlak Bilgi Merkezi | Blog Yazıları | Nesrin Akyıldız",
-		description: "Kat mülkiyeti nedir? TAKS-KAKS nasıl hesaplanır? Emlak dünyasına dair güncel ve bilgilendirici içerikler blog sayfamızda sizi bekliyor.",
-		keywords: "emlak blog, gayrimenkul rehberi, yatırım bilgisi, kat mülkiyeti, emsal hesabı, gayrimenkul vergileri",
-		openGraph: {
-			title: "Emlak Dünyasında Bilinçli Adımlar Atın",
-			description: "Gayrimenkul hakkında aradığınız tüm bilgiler burada. Uzman içeriklerle doğru yatırım kararları verin.",
-			images: ["https://res.cloudinary.com/dbw3ozdoh/image/upload/v1751217700/pjz674stwf1uwwt34enu.png"],
-		},
-	}
+  // Redux store'a genel verileri yükle
+  await store.dispatch(getGeneral())
+  
+  // SEO metadatasını oluştur
+  return generateSeoMetadata("blog")
 }
 
 export default function BlogLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode
+  children: React.ReactNode
 }) {
-	return (
-		<>
-			{children}
-		</>
-	)
+  return (
+    <>
+      {children}
+    </>
+  )
 } 

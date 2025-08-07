@@ -1,27 +1,25 @@
 import { Metadata } from "next"
+import { store } from "@/redux/store"
+import { getGeneral } from "@/redux/actions/generalActions"
+import { generateMetadata as generateSeoMetadata } from "@/lib/seo"
 
-// Static metadata generation
+// Dinamik metadata oluşturma
 export async function generateMetadata(): Promise<Metadata> {
-	return {
-		title: "Emlak Hizmetlerimiz | Konut, Arsa ve Ticari Danışmanlık",
-		description: "Konut kiralama, arsa satışı, ticari yatırım ve gayrimenkul danışmanlığı hizmetlerimiz hakkında detaylı bilgi edinin.",
-		keywords: "arsa danışmanlığı, konut kiralama hizmeti, ticari gayrimenkul desteği, yatırım rehberliği, emlak hizmetleri",
-		openGraph: {
-			title: "Profesyonel Emlak Hizmetlerimizle Tanışın",
-			description: "İhtiyacınıza uygun konut, arsa ve ticari mülk hizmetleri ile uzman danışmanlık burada. Hizmet detaylarını inceleyin.",
-			images: ["https://res.cloudinary.com/dbw3ozdoh/image/upload/v1751217700/pjz674stwf1uwwt34enu.png"],
-		},
-	}
+  // Redux store'a genel verileri yükle
+  await store.dispatch(getGeneral())
+  
+  // SEO metadatasını oluştur
+  return generateSeoMetadata("service")
 }
 
 export default function HizmetlerLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode
+  children: React.ReactNode
 }) {
-	return (
-		<>
-			{children}
-		</>
-	)
+  return (
+    <>
+      {children}
+    </>
+  )
 } 
