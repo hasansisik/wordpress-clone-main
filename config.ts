@@ -1,1 +1,1 @@
-export const server: string ="https://nilated-server-e09f165546d9.herokuapp.com/v1";
+export const server: string ="https://nesrin-emlak-server-9797716e7771.herokuapp.com/v1";

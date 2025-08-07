@@ -83,7 +83,6 @@ export default function Services5({ previewData }: Services5Props) {
 		// Otherwise use Redux data
 		else if (other && other.services5) {
 			setData(other.services5);
-			console.log("Subtitle background color:", other.services5.subtitleBackgroundColor);
 		}
 	}, [previewData, other]);
 
@@ -206,7 +205,7 @@ export default function Services5({ previewData }: Services5Props) {
 								<span className="tag-spacing fs-7 fw-bold ms-2 text-uppercase">{data.subtitle}</span>
 							</div>
 						)}
-						<h3 className="ds-5 my-3" style={titleStyle}>{data.title}</h3>
+						<h3 className="ds-3 my-3" style={titleStyle}>{data.title}</h3>
 						<p className="fs-5" style={descriptionStyle}>
 							{data.description}
 						</p>
@@ -275,7 +274,7 @@ export default function Services5({ previewData }: Services5Props) {
 											<h6 className="my-3 text-gray-800">{hizmet.title}</h6>
 											<p className="text-gray-700">{truncateText(hizmet.description)}</p>
 										</div>
-										<Link href={`/${slugify(hizmet.title)}`} className="position-absolute bottom-0 start-0 end-0 top-0 z-0" aria-label={hizmet.title} />
+										<Link href={`/hizmet-${slugify(hizmet.title)}`} className="position-absolute bottom-0 start-0 end-0 top-0 z-0" aria-label={hizmet.title} />
 									</div>
 								</div>
 							);
@@ -284,36 +283,6 @@ export default function Services5({ previewData }: Services5Props) {
 				</div>
 
 			</section>
-
-			{/* Bottom Message Section */}
-			<section className="py-5" style={{ backgroundColor: "#fff" }}>
-				<div className="container">
-					<div className="row">
-						<div className="col-12 text-center">
-							<div className="mx-auto" style={{ maxWidth: "600px" }}>
-								<h4 className="fw-bold mb-4" style={{ color: "#111827", lineHeight: "1.6" }}>
-									Biz Sadece Hizmet Sunmuyoruz.
-								</h4>
-								<div style={{ color: "#6E6E6E", lineHeight: "1.8", fontSize: "1.1rem" }}>
-									<p className="mb-3">Bazıları bir danışanla,</p>
-									<p className="mb-3">Bazıları bir kelimeyle,</p>
-									<p className="mb-4">Bazıları bir mühürle buluşur.</p>
-									
-									<div className="mt-4">
-										<h5 className="fw-bold mb-3" style={{ color: "#111827" }}>
-											NİLATED
-										</h5>
-										<p className="mb-2"><strong>Kalpten Gelen Bilgi.</strong></p>
-										<p className="mb-2"><strong>Yaraya Saygılı Dil.</strong></p>
-										<p className="mb-0"><strong>Ve Her Satırda Bir Tanıklık.</strong></p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
 			<style jsx>{`
 				.card {
 					display: block;

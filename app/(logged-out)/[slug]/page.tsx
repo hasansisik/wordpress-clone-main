@@ -81,8 +81,7 @@ const fetchBlogs = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
     const response = await fetch(`${baseUrl}/api/local-blogs`, { cache: 'no-store' });
     if (!response.ok) {
-      console.warn(`Failed to fetch blogs: ${response.status}`);
-      return [];
+      throw new Error(`Failed to fetch blogs: ${response.status}`);
     }
     return await response.json();
   } catch (error) {
@@ -97,8 +96,7 @@ const fetchProjects = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
     const response = await fetch(`${baseUrl}/api/local-projects`, { cache: 'no-store' });
     if (!response.ok) {
-      console.warn(`Failed to fetch projects: ${response.status}`);
-      return [];
+      throw new Error(`Failed to fetch projects: ${response.status}`);
     }
     const data = await response.json();
     return data.projects || [];
@@ -112,10 +110,10 @@ const fetchProjects = async () => {
 export async function generateMetadata({ 
   params 
 }: { 
-  params: Promise<{ slug: string }>
+  params: { slug: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   
   try {
     // Fetch blog and project data from API endpoints
@@ -175,12 +173,9 @@ export async function generateMetadata({
 export default async function SlugPage({ 
   params 
 }: { 
-  params: Promise<{ slug: string }>
+  params: { slug: string }
   searchParams?: { [key: string]: string | string[] | undefined }
 }) {
-  // Await params before accessing its properties
-  const { slug } = await params;
-  
   // Pass the slug directly to the client component
-  return <SlugPageClient slug={slug} />;
+  return <SlugPageClient slug={params.slug} />;
 }

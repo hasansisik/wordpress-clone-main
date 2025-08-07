@@ -1,5 +1,8 @@
 import { Suspense } from "react";
 import { server } from "@/config";
+import Slider from "@/components/sections/Slider";
+import ContactCards from "@/components/sections/ContactCards";
+import ProjectGallery from "@/components/sections/ProjectGallery";
 import Hero1 from "@/components/sections/Hero1";
 import Hero2 from "@/components/sections/Hero2";
 import Cta4 from "@/components/sections/Cta4";
@@ -18,7 +21,6 @@ import Blog1 from "@/components/sections/Blog1";
 import Blog2 from "@/components/sections/Blog2";
 import Blog3 from "@/components/sections/Blog3";
 import Blog5 from "@/components/sections/Blog5";
-import Team from "@/components/sections/Team";  
 import Team1 from "@/components/sections/Team1";  
 import Features1 from "@/components/sections/Features1";
 import Features4 from "@/components/sections/Features4";
@@ -74,7 +76,6 @@ const sectionComponents = {
   Blog2,
   Blog3,
   Blog5,
-  Team,
   Team1,
   Features1,
   Features4,
@@ -179,6 +180,15 @@ export default async function Home() {
   
   return (
     <ReduxProvider preloadedState={preloadedState}>
+      {/* Fixed Slider at the top */}
+      <Slider />
+      
+      {/* Contact Cards Section */}
+      <ContactCards />
+      
+      {/* Project Gallery Section */}
+      <ProjectGallery />
+      
       <Suspense fallback={<PlaceholderSection />}>
         {sections.map((section: Section) => {
           const SectionComponent = sectionComponents[section.type];
@@ -199,8 +209,6 @@ export default async function Home() {
             if (section.config.subtitle) {
               configProps.subtitle = section.config.subtitle;
             }
-            // Debug log for section config
-            console.log(`Rendering ${section.type} with config:`, section.config);
           }
           
           return <SectionComponent key={section.id} {...configProps} />;

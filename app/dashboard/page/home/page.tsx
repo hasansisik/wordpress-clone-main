@@ -281,13 +281,6 @@ const availableSections = [
     icon: Layout,
   },
   {
-    id: "team",
-    name: "Team",
-    type: "Team",
-    description: "Team grid with images",
-    icon: Layout,
-  },
-  {
     id: "team1",
     name: "Team 1",
     type: "Team1",

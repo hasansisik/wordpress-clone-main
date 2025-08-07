@@ -63,6 +63,81 @@ export default function Hero2({ previewData }: { previewData?: any }) {
     return () => window.removeEventListener('message', handleMessage);
   }, []);
 
+  // Create dynamic styles for button colors
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const styleId = 'hero2-dynamic-styles';
+    let existingStyle = document.getElementById(styleId);
+    
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+    
+    const data = heroData?.hero2 || {};
+    const primaryButtonBackgroundColor = data.primaryButtonBackgroundColor || "linear-gradient(90deg, #6342EC 0%, #4731D8 100%)";
+    const primaryButtonTextColor = data.primaryButtonTextColor || "#FFFFFF";
+    const videoButtonBackgroundColor = data.videoButtonBackgroundColor || "rgba(255, 255, 255, 0.3)";
+    const videoButtonTextColor = data.videoButtonTextColor || "#111827";
+    const videoButtonIconColor = data.videoButtonIconColor || "#111827";
+    const navigationButtonColor = data.navigationButtonColor || "#ffffff";
+    
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.innerHTML = `
+      .hero2-primary-btn {
+        background: ${primaryButtonBackgroundColor} !important;
+        color: ${primaryButtonTextColor} !important;
+        border: none !important;
+      }
+      .hero2-video-btn {
+        background-color: ${videoButtonBackgroundColor} !important;
+        color: ${videoButtonTextColor} !important;
+      }
+      .hero2-video-icon {
+        color: ${videoButtonIconColor} !important;
+      }
+      .hero2-nav-btn {
+        background-color: ${navigationButtonColor} !important;
+      }
+      .hero2-nav-btn:hover {
+        background-color: ${navigationButtonColor} !important;
+      }
+      .hero2-nav-btn i {
+        color: #000000 !important;
+      }
+      .hero2-nav-btn:hover i {
+        color: #000000 !important;
+      }
+      @media (max-width: 768px) {
+        .section-hero-5 .backdrop-filter {
+          max-width: 100% !important;
+          overflow: hidden !important;
+        }
+        .section-hero-5 .container {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+        }
+        .section-hero-5 h4 {
+          font-size: 1.5rem !important;
+          line-height: 1.2 !important;
+        }
+        .section-hero-5 p {
+          font-size: 0.9rem !important;
+          line-height: 1.4 !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      const styleToRemove = document.getElementById(styleId);
+      if (styleToRemove) {
+        styleToRemove.remove();
+      }
+    };
+  }, [heroData]);
+
   if (loading || reduxLoading) {
     return <div className="py-5 text-center">Yükleniyor...ro information...</div>;
   }
@@ -149,27 +224,29 @@ export default function Hero2({ previewData }: { previewData?: any }) {
 
   const primaryButtonStyle = {
     background: primaryButtonBackgroundColor,
-    color: primaryButtonTextColor
-  };
+    color: primaryButtonTextColor,
+    border: 'none'
+  } as React.CSSProperties;
 
   const videoButtonStyle = {
     backgroundColor: videoButtonBackgroundColor,
     color: videoButtonTextColor
-  };
+  } as React.CSSProperties;
 
   const videoButtonIconStyle = {
     color: videoButtonIconColor
-  };
+  } as React.CSSProperties;
 
   const navigationButtonStyle = {
     backgroundColor: navigationButtonColor
-  };
+  } as React.CSSProperties;
 
   // Image style constraints
   const backgroundImageStyle = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    maxHeight: '927px'
+    maxHeight: '927px',
+    minHeight: '400px'
   };
 
   const lineImageStyle = {
@@ -190,7 +267,7 @@ export default function Hero2({ previewData }: { previewData?: any }) {
             {slides.map((slide: SlideItem, index: number) => (
               <SwiperSlide className="swiper-slide" key={index}>
                 <div 
-                  className="position-relative py-188 img-pull" 
+                  className="position-relative py-75 py-md-100 py-lg-188 img-pull" 
                   style={{ 
                     backgroundImage: `url(${slide.backgroundImage})`,
                     ...backgroundImageStyle
@@ -198,32 +275,32 @@ export default function Hero2({ previewData }: { previewData?: any }) {
                 >
                   <div className="container position-relative z-2">
                     <div className="row">
-                      <div className="col-lg-6">
-                        <div className="backdrop-filter p-8 position-relative rounded-3">
-                          <div 
-                            className="bg-opacity-50 border d-inline-flex rounded-pill px-4 py-1"
-                            style={badgeStyle}
-                          >
-                            <span className="tag-spacing fs-6">{slide.badge}</span>
-                          </div>
-                          <h4 className="ds-4 my-3" style={titleStyle}>
+                      <div className="col-lg-6 col-12">
+                        <div className="backdrop-filter p-3 p-md-4 p-lg-8 position-relative rounded-3" style={{maxWidth: '100%', wordWrap: 'break-word'}}>
+                                                      <div 
+                              className="bg-opacity-50 border d-inline-flex rounded-pill px-3 px-lg-4 py-1"
+                              style={badgeStyle}
+                            >
+                              <span className="tag-spacing fs-7 fs-lg-6">{slide.badge}</span>
+                            </div>
+                          <h4 className="ds-6 ds-md-5 ds-lg-4 my-2 my-md-3" style={{...titleStyle, lineHeight: '1.2', wordBreak: 'break-word'}}>
                             {slide.title}
                           </h4>
-                          <p className="fs-5 text-900" style={descriptionStyle}>
+                          <p className="fs-7 fs-md-6 fs-lg-5 text-900 mb-3" style={{...descriptionStyle, lineHeight: '1.4', wordBreak: 'break-word'}}>
                             {slide.description}
                           </p>
-                          <div className="d-flex flex-column flex-md-row align-items-center">
+                          <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-0">
                             <Link 
                               href={slide.primaryButtonLink} 
-                              className="btn rounded-4 d-flex align-items-center"
+                              className="btn btn-sm btn-lg-md rounded-4 d-flex align-items-center hero2-primary-btn"
                               style={primaryButtonStyle}
                             >
-                              {slide.primaryButtonText}
+                              <span className="fs-7 fs-lg-6">{slide.primaryButtonText}</span>
                               <svg 
                                 className="ms-2" 
                                 xmlns="http://www.w3.org/2000/svg" 
-                                width={24} 
-                                height={24} 
+                                width={20} 
+                                height={20} 
                                 viewBox="0 0 24 24" 
                                 fill="none"
                               >
@@ -252,11 +329,11 @@ export default function Hero2({ previewData }: { previewData?: any }) {
                                   setOpen(true);
                                 }} 
                                 scroll={false} 
-                                className="d-inline-flex align-items-center rounded-4 text-nowrap backdrop-filter align-self-md-stretch px-3 py-2 popup-video hover-up ms-md-3 mt-3 mt-md-0"
+                                className="d-inline-flex align-items-center rounded-4 text-nowrap backdrop-filter px-3 py-2 popup-video hover-up ms-md-3 hero2-video-btn"
                                 style={videoButtonStyle}
                               >
                                 <span 
-                                  className="backdrop-filter me-2 icon-shape icon-md rounded-circle"
+                                  className="backdrop-filter me-2 icon-shape icon-md rounded-circle hero2-video-icon"
                                   style={videoButtonIconStyle}
                                 >
                                   <svg 
@@ -275,7 +352,7 @@ export default function Hero2({ previewData }: { previewData?: any }) {
                                     />
                                   </svg>
                                 </span>
-                                <span className="fw-bold fs-7">
+                                <span className="fw-bold fs-8 fs-lg-7">
                                   {slide.videoButtonText}
                                 </span>
                               </Link>
@@ -300,13 +377,13 @@ export default function Hero2({ previewData }: { previewData?: any }) {
           {showNavigation && (
             <>
               <div 
-                className="swiper-button-prev d-none d-lg-flex shadow-2 position-absolute top-50 translate-middle-y ms-lg-7"
+                className="swiper-button-prev d-none d-lg-flex shadow-2 position-absolute top-50 translate-middle-y ms-lg-7 hero2-nav-btn"
                 style={navigationButtonStyle}
               >
                 <i className="bi bi-arrow-left" />
               </div>
               <div 
-                className="swiper-button-next d-none d-lg-flex shadow-2 position-absolute top-50 translate-middle-y me-lg-7"
+                className="swiper-button-next d-none d-lg-flex shadow-2 position-absolute top-50 translate-middle-y me-lg-7 hero2-nav-btn"
                 style={navigationButtonStyle}
               >
                 <i className="bi bi-arrow-right" />

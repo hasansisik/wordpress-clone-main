@@ -32,20 +32,6 @@ export default function Services2({ previewData }: Services2Props = {}) {
 		}
 	}, [previewData, other])
 
-	// Function to format description text with bullet points
-	const formatDescription = (description: string) => {
-		if (!description) return '';
-		// Replace • with line breaks and bullet points
-		return description.split('•').map((item, index) => {
-			if (index === 0 && item.trim() === '') return null;
-			return (
-				<div key={index} className="mb-1">
-					{index > 0 && '• '}{item.trim()}
-				</div>
-			);
-		}).filter(Boolean);
-	};
-
 	if (!data || loading) {
 		return <section>Yükleniyor...rvices2...</section>
 	}
@@ -87,9 +73,7 @@ export default function Services2({ previewData }: Services2Props = {}) {
 											</div>
 										</div>
 										<h5 className="my-3">{service.title}</h5>
-										<div className="mb-6 flex-grow-1 text-start">
-											{formatDescription(service.description)}
-										</div>
+										<p className="mb-6 flex-grow-1">{service.description}</p>
 									</div>
 								</div>
 							</div>

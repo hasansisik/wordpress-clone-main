@@ -93,6 +93,13 @@ export default function FeaturesEditor() {
     }
   };
 
+  // Send data to preview when data changes
+  useEffect(() => {
+    if (showPreview && featuresData) {
+      sendDataToPreview();
+    }
+  }, [featuresData, activeComponent, showPreview]);
+
   // Handle component selection
   const handleComponentChange = (componentName: string) => {
     setActiveComponent(componentName);
@@ -313,6 +320,11 @@ function Features1ContentForm({ data }: { data: any }) {
               label="Icon Background Color"
               value={feature.iconBackgroundColor || ""}
               path={`features1.features.${index}.iconBackgroundColor`}
+            />
+            <ColorField
+              label="Icon Color"
+              value={feature.iconColor || ""}
+              path={`features1.features.${index}.iconColor`}
             />
           </FormGroup>
         ))}
@@ -1057,6 +1069,11 @@ function Features10ContentForm({ data }: { data: any }) {
               label="Icon Background Color"
               value={feature.iconBackgroundColor || ""}
               path={`features10.features.${index}.iconBackgroundColor`}
+            />
+            <ColorField
+              label="Icon Color"
+              value={feature.iconColor || ""}
+              path={`features10.features.${index}.iconColor`}
             />
           </FormGroup>
         ))}

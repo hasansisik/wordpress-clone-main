@@ -17,9 +17,11 @@ export default function Features8({ previewData }: Features8Props = {}) {
 	const { features, loading } = useSelector((state: RootState) => state.features)
 
 	useEffect(() => {
-		// Always trigger getFeatures() on component mount
-		dispatch(getFeatures())
-	}, [dispatch])
+		// Only fetch if we don't already have features data
+		if (!features?.features8) {
+			dispatch(getFeatures())
+		}
+	}, [dispatch, features])
 
 	useEffect(() => {
 		// If preview data is provided, use it
@@ -32,9 +34,21 @@ export default function Features8({ previewData }: Features8Props = {}) {
 		}
 	}, [previewData, features])
 
-	// If data is still loading, return empty component
+	// Return placeholder during data loading (minimal and without text)
 	if (!data) {
-		return null
+		return (
+			<section>
+				<div className="container-fluid position-relative py-5">
+					<div className="container">
+						<div className="row align-items-center">
+							<div className="col-lg-4 col-md-6 mb-lg-0 mb-8" style={{ minHeight: "200px" }}></div>
+							<div className="col-lg-4 col-md-6 mb-lg-0 mb-8" style={{ minHeight: "200px" }}></div>
+							<div className="col-lg-4 mb-lg-0 mb-8" style={{ minHeight: "200px" }}></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		)
 	}
 
 	// Split values into two columns (left and right)

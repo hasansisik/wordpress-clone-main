@@ -107,54 +107,24 @@ export default function Footer1(props: FooterProps = {}) {
 									)}
 								</div>
 								<div className="col-lg-8">
-									<div className="row justify-content-center">
+									<div className="row">
 										{footerData.columns.length > 0 ? (
-											footerData.columns.map((column: any, colIndex: number) => {
-												// Content-based column sizing
-												const columnCount = footerData.columns.length;
-												let colClass = "col-auto"; // Auto width based on content
-												
-												// Special handling for specific columns
-												if (column.title === "HİZMETLER") {
-													colClass = "col-lg-5 col-md-6 col-12"; // Wider for services
-												} else if (column.title === "POLİTİKALAR") {
-													colClass = "col-lg-3 col-md-6 col-12"; // Narrower for policies
-												} else {
-													// Default sizing for other columns
-													if (columnCount === 1) {
-														colClass = "col-lg-12 col-md-12 col-12";
-													} else if (columnCount === 2) {
-														colClass = "col-lg-6 col-md-6 col-12";
-													} else if (columnCount === 3) {
-														colClass = "col-lg-4 col-md-6 col-12";
-													} else {
-														colClass = "col-lg-3 col-md-6 col-12";
-													}
-												}
-												
-												return (
-													<div key={column._id || `column-${colIndex}`} className={colClass} data-aos="fade-zoom-in" data-aos-delay={200 + (colIndex * 100)}>
+											footerData.columns.map((column: any, colIndex: number) => (
+												<div key={column._id || `column-${colIndex}`} className="col-lg-3 col-md-4 col-6" data-aos="fade-zoom-in" data-aos-delay={200 + (colIndex * 100)}>
 													<h3 className="text-white opacity-50 fs-6 fw-black text-uppercase pb-3 pt-5">{column.title}</h3>
 													<div className="d-flex flex-column align-items-start">
 														{Array.isArray(column.links) && column.links.map((link: any, linkIndex: number) => (
 															<Link 
 																key={link._id || `link-${colIndex}-${linkIndex}`} 
-																	className="hover-effect text-white mb-2 fw-medium" 
+																className="hover-effect text-white mb-2 fw-medium fs-6" 
 																href={link.link || "#"}
-																	style={{ 
-																		whiteSpace: 'nowrap',
-																		display: 'block',
-																		fontSize: '0.85rem',
-																		lineHeight: '1.4'
-																	}}
 															>
 																{link.name}
 															</Link>
 														))}
 													</div>
 												</div>
-												);
-											})
+											))
 										) : (
 											<div className="col-12 opacity-0">
 												{/* Empty space instead of "No menu columns found" text */}

@@ -105,52 +105,30 @@ export default function Cta3({ previewData }: Cta3Props = {}) {
 									</svg>
 								</Link>
 							)}
-							
-							{/* Rounded Image at bottom left */}
-							<div className="mt-5">
+							{/* Görsel eklendi */}
+							<div className="mt-4">
 								<img 
-									src="https://res.cloudinary.com/ddmwgv3av/image/upload/v1750094155/pski_hx5nw3.avif"
-									alt="Dr. Cemil Çelik"
-									className="rounded-lg"
-									style={{ width: '600px', height: '300px', objectFit: 'cover' }}
+									src="https://res.cloudinary.com/dbw3ozdoh/image/upload/v1751154388/c0b4qlaseziv6hop3rs3.png" 
+									alt="Hakkımda görseli"
+									style={{
+										borderRadius: "18px",
+										maxWidth: "100%",
+										height: "auto",
+										boxShadow: "0 2px 16px rgba(0,0,0,0.06)"
+									}}
 								/>
 							</div>
 						</div>
 						<div className="col-lg-6 offset-lg-1 mt-lg-0 mt-8">
-							<div 
+							<p 
 								className="fs-5 text-900 mb-5"
-								style={{ color: data.descriptionColor || "#111827" }}
+								style={{ 
+									color: data.descriptionColor || "#111827",
+									whiteSpace: "pre-wrap"
+								}}
 							>
-								<p className="mb-4">
-									<strong>Kurucumuz: Dr. Cemil Çelik</strong><br />
-									Psikiyatrist, psikoterapist, eğitmen, yol arkadaşı… Ama en çok da bir çağın sesi… Dr. Cemil Çelik, yıllar boyunca hem danışanlara hem de meslektaşlarına dokunarak, bilgiyi yalnızca aktaran değil, anlamla buluşturan bir dil kurdu. NİLATED, onun yıllara yayılan emeğinin, hayalinin ve içsel yolculuğunun doğal bir devamıdır.
-								</p>
-								
-								<p className="mb-4">
-									<strong>NİLATED Ne Demek?</strong><br />
-									NİLATED bir kısaltma değil; bir niyettir. Her harfinde bir sorumluluk, her sesinde bir adanmışlık vardır. Çok dillidir, çünkü insanın dili çoktur. Çok katmanlıdır, çünkü ruh bir tek hikâyeyle anlatılamaz. Ve evrenseldir; çünkü her kalpte yankı bulmak için kurulmuştur.
-								</p>
-								
-								<p className="mb-4">
-									<strong>Biz Kimiz?</strong><br />
-									NİLATED, alanında uzman ve ruhunda sorumluluk taşıyan kişilerden oluşan bir "onlular topluluğudur." Her birimizin kendine özgü bir mühürü, bir görevi ve bir sesi vardır. Kimi yazar, kimi anlatır… Kimi planlar, kimi paylaşır… Ama hepimiz aynı idealin hizmetindeyiz: Bilgiyi taşı, Yaraya tanık ol, Anlamı duyur.
-								</p>
-								
-								<p className="mb-4">
-									<strong>Ne Yapıyoruz?</strong><br />
-									• Terapist ve ruh sağlığı uzmanlarına yönelik profesyonel eğitimler<br />
-									• Gerçek vaka analizleriyle öğretici ve etkileyici içerikler<br />
-									• Kurumlara özel danışmanlık ve içsel gelişim rehberliği<br />
-									• Youtube ve dijital platformlarda psikoeğitim serileri<br />
-									• Ruhsal, metaforik, şiirsel içerikler: 304 – Güvercin – Çağın Sesi
-								</p>
-								
-								<p className="mb-0">
-									<strong>Sözümüz Var…</strong><br />
-									Biz, etik çizgiden sapmadan, insanın yarasına eğilerek, kalpten kalbe bir yol açmak için buradayız. Terapide, eğitimde, danışmanlıkta, anlatıda… Her adımımızda bir mühür, her kelimemizde bir tanıklık taşıyoruz.<br />
-									<strong>NİLATED – Her Kalbe Bir Mühür</strong>
-								</p>
-							</div>
+								{data?.description || "Was founded with a passion for technology and a desire to make a difference in the digital world. From our humble beginnings, we have grown into a reputable and sought-after web development agency, serving a diverse range of clients across various industries. Over the years, we have successfully delivered countless projects, each one a testament to our dedication, expertise, and innovative approach. Our journey has been marked by continuous growth, learning, and adaptation and we are proud of the milestones we have achieved along the way."}
+							</p>
 						</div>
 					</div>
 				</div>
