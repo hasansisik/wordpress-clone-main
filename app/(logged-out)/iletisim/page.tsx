@@ -1,24 +1,24 @@
 import Contact1 from "@/components/sections/Contact1"
 import Link from "next/link"
 import { Metadata } from "next"
-import { store } from "@/redux/store"
-import { getGeneral } from "@/redux/actions/generalActions"
-import { generateMetadata as generateSeoMetadata } from "@/lib/seo"
 
-// Dinamik metadata oluşturma
+// Static metadata generation
 export async function generateMetadata(): Promise<Metadata> {
-	// Redux store'a genel verileri yükle
-	await store.dispatch(getGeneral())
-	
-	// SEO metadatasını oluştur
-	return generateSeoMetadata("contact")
+	return {
+		title: "İletişim | Nesrin Akyıldız Emlak Danışmanlığı",
+		description: "Sorularınız mı var? Hemen iletişim formunu doldurun ya da doğrudan bize ulaşın. Çınarköy'de güvenilir emlak danışmanı bir telefon uzağınızda.",
+		keywords: "emlak iletişim, danışmanlık formu, emlakçıya ulaş, gayrimenkul danışmanı iletişim",
+		openGraph: {
+			title: "Bize Ulaşın | Nesrin Akyıldız",
+			description: "Size en kısa sürede dönüş yapalım. İletişim formu veya telefonla profesyonel destek alın.",
+			images: ["https://res.cloudinary.com/dbw3ozdoh/image/upload/v1751217700/pjz674stwf1uwwt34enu.png"],
+		},
+	}
 }
 
 export default function PageContact2() {
-
 	return (
 		<>
-
 			<Contact1 />
 		</>
 	)
